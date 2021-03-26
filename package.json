@@ -1,11 +1,12 @@
 {
   "name": "vue-aspect-ratio-wrapper",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.8",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-package": "vue-cli-service build --target lib --name vue-aspect-ratio-wrapper src/index.ts"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -34,9 +35,26 @@
     },
     "rules": {}
   },
+  "main": "dist/vue-aspect-ratio-wrapper.common.js",
+  "module": "dist/vue-aspect-ratio-wrapper.esm.js",
+  "unpkg": "dist/vue-aspect-ratio-wrapper.umd.min.js",
+  "files": [
+    "dist/*.js",
+    "src/*"
+  ],
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ezaurum/vue-aspect-ratio-wrapper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ezuaurm/vue-aspect-ratio-wrapper/issues"
+  },
+  "homepage": "https://github.com/ezaurum/vue-aspect-ratio-wrapper/blob/main/README.md",
+  "jsdelivr": "dist/vue-aspect-ratio-wrapper.umd.min.js",
+  "license": "MIT"
 }
