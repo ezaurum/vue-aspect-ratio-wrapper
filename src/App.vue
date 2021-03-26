@@ -6,8 +6,8 @@
       </VueAspectRatioWrapper>
     </div>
     <div id="normal">
-      <VueAspectRatioWrapper :flex="false">
-        <div class="contents">16:9</div>
+      <VueAspectRatioWrapper ratio="4:3" :flex="false">
+        <div class="contents">4:3</div>
       </VueAspectRatioWrapper>
     </div>
   </main>
@@ -45,10 +45,12 @@ div {
   margin: auto;
   height: 30vh;
   width: 50vw;
+  border: 1px solid gray;
+  padding: 1rem;
 }
 
 div + div {
-  margin-top:2rem;
+  margin-top: 2rem;
 }
 
 .contents {

@@ -8,11 +8,11 @@
   </article>
 </template>
 
-<script>
-import {elementResizeWatcher} from '../watcher'
+<script lang="ts">
+import {elementResizeWatcher} from "@/watcher.ts"
 
 export default {
-  name: "CAspectRatioWrapper",
+  name: "VueAspectRatioWrapper",
   props: {
     ratio: {
       type: String,
@@ -45,12 +45,12 @@ export default {
       const style = this.$refs.main.style
       // 가로가 긴 경우 width is longer then height
       if (r > this.aspectRatio) {
-        style.setProperty("--verticalPadding", 0)
+        style.setProperty("--verticalPadding", "0")
         style.setProperty("--horizontalPadding", `${(width - height * this.aspectRatio) / 2}px`)
       } else if (r < this.aspectRatio) {
         // 세로가 긴 경우 height is longer then width
         style.setProperty("--verticalPadding", `${(height - width / this.aspectRatio) / 2}px`)
-        style.setProperty("--horizontalPadding", 0)
+        style.setProperty("--horizontalPadding", "0")
       }
       this.watcher.start()
     },
@@ -84,6 +84,7 @@ export default {
   position: relative;
   overflow: hidden;
   display: block;
+  box-sizing: border-box;
 
   --horizontalPadding: 0;
   --verticalPadding: 0;
@@ -98,6 +99,5 @@ export default {
 .aspect-ratio-wrapper--self-container {
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
 }
 </style>
